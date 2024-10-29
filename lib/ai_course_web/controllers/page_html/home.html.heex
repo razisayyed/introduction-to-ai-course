@@ -1,0 +1,50 @@
+<.flash_group flash={@flash} />
+<%!-- CENTER SCREEN DEV --%>
+<div class="pt-24">
+  <div class="flex flex-col items-center justify-center">
+    <div class="text-center mb-3">
+      <h1 class="text-5xl text-zinc-900 mb-3">Introduction to AI</h1>
+      <p class="text-lg text-zinc-700">
+        Genetic Algorithms and Simulated Annealing Algorithms
+      </p>
+    </div>
+    <div class="grid gird-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-6">
+      <.link
+        href={~p"/simulated-annealing-graph-coloring"}
+        class="p-6 rounded text-center bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:text-zinc-700"
+      >
+        Graph Coloring (SA)
+      </.link>
+      <.link
+        href={~p"/genetic-algorithms-graph-coloring"}
+        class="p-6 rounded text-center bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:text-zinc-700"
+      >
+        Graph Coloring (GA)
+      </.link>
+      <.link
+        href={~p"/simulated-annealing-nqueens"}
+        class="p-6 rounded text-center bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:text-zinc-700"
+      >
+        NQueens (SA)
+      </.link>
+      <.link
+        href={~p"/genetic-algorithms-nqueens"}
+        class="p-6 rounded text-center bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:text-zinc-700"
+      >
+        NQueens (GA)
+      </.link>
+      <.link
+        href={~p"/simulated-annealing-tsp"}
+        class="p-6 rounded text-center bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:text-zinc-700"
+      >
+        TSP (SA)
+      </.link>
+      <.link
+        href={~p"/genetic-algorithms-tsp"}
+        class="p-6 rounded text-center bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 hover:text-zinc-700"
+      >
+        TSP (GA)
+      </.link>
+    </div>
+  </div>
+</div>

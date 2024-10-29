@@ -1,0 +1,56 @@
+<header class="px-4 sm:px-6 lg:px-8">
+  <div class="flex items-center justify-start gap-3 border-b border-zinc-100 py-3 text-sm">
+    <div class="flex items-center gap-4">
+      <a href="/">
+        <img src={~p"/images/logo.svg"} width="36" />
+      </a>
+      <%!-- <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
+        v<%= Application.spec(:phoenix, :vsn) %>
+      </p> --%>
+    </div>
+    <div class="flex items-center flex-wrap gap-4 font-semibold leading-6">
+      <.link
+        href={~p"/simulated-annealing-graph-coloring"}
+        class={"text-orange-700 hover:text-orange-800 #{if @active_link == :graph_coloring_sa, do: "underline underline-offset-2", else: ""}"}
+      >
+        Graph Coloring (SA)
+      </.link>
+      <.link
+        href={~p"/genetic-algorithms-graph-coloring"}
+        class={"text-orange-700 hover:text-orange-800 #{if @active_link == :graph_coloring_ga, do: "underline underline-offset-2", else: ""}"}
+      >
+        Graph Coloring (GA)
+      </.link>
+      <.link
+        href={~p"/simulated-annealing-nqueens"}
+        class={"text-blue-700 hover:text-blue-800 #{if @active_link == :nqueens_sa, do: "underline underline-offset-2", else: ""}"}
+      >
+        NQueens (SA)
+      </.link>
+      <.link
+        href={~p"/genetic-algorithms-nqueens"}
+        class={"text-blue-700 hover:text-blue-800 #{if @active_link == :nqueens_ga, do: "underline underline-offset-2", else: ""}"}
+      >
+        NQueens (GA)
+      </.link>
+      <.link
+        href={~p"/simulated-annealing-tsp"}
+        class={"text-green-700 hover:text-green-800 #{if @active_link == :tsp_sa, do: "underline underline-offset-2", else: ""}"}
+      >
+        TSP (SA)
+      </.link>
+      <.link
+        href={~p"/genetic-algorithms-tsp"}
+        class={"text-green-700 hover:text-green-800 #{if @active_link == :tsp_ga, do: "underline underline-offset-2", else: ""}"}
+      >
+        TSP (GA)
+      </.link>
+    </div>
+  </div>
+</header>
+<main class="px-4 py-12 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-4xl">
+    <.flash_group flash={@flash} />
+    <%= @inner_content %>
+  </div>
+</main>
