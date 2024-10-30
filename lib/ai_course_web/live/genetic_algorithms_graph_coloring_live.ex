@@ -44,7 +44,7 @@ defmodule AiCourseWeb.GeneticAlgorithmGraphColoringLive do
   def handle_info(:tick, socket) do
     {status, population, best, generation} =
       if socket.assigns.delay < 5 do
-        1..1000
+        1..20
         |> Enum.reduce(
           {:ok, socket.assigns.population, socket.assigns.best, socket.assigns.generation},
           fn _i, {_prev_status, population, best, generation} ->
