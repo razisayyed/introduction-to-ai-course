@@ -18,7 +18,8 @@ defmodule SimulatedAnnealing.Solver do
               best_energy: nil,
               iteration: nil,
               temperature: nil,
-              annealing_iteration: nil
+              annealing_iteration: nil,
+              best_age: nil
   end
 
   @doc """
@@ -55,6 +56,7 @@ defmodule SimulatedAnnealing.Solver do
       best_energy: energy,
       iteration: 0,
       annealing_iteration: 0,
+      best_age: 0,
       temperature: opts.initial_temperature
     }
   end
@@ -85,10 +87,11 @@ defmodule SimulatedAnnealing.Solver do
         state = %{
           state
           | iteration: state.iteration + 1,
+            best_age: state.best_age + 1,
             annealing_iteration:
               case opts.max_reannealing_iterations do
                 0 -> state.annealing_iteration + 1
-                m when m < state.annealing_iteration -> 0
+                m when m < state.best_age -> 0
                 _ -> state.annealing_iteration + 1
               end
         }
@@ -127,7 +130,7 @@ defmodule SimulatedAnnealing.Solver do
         current_energy: neighbour_energy,
         best: neighbour,
         best_energy: neighbour_energy,
-        annealing_iteration: 0,
+        best_age: 0,
         temperature: temperature
     }
   end
