@@ -1,0 +1,7 @@
+version: "3"
+services:
+  ai-course:
+    build:
+      context: .
+    ports:
+      - 80:4000
