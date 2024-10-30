@@ -87,7 +87,11 @@ defmodule SimulatedAnnealing.Solver do
         state = %{
           state
           | iteration: state.iteration + 1,
-            best_age: state.best_age + 1,
+            best_age:
+              case opts.max_reannealing_iterations do
+                m when m < state.best_age -> 0
+                _ -> state.best_age + 1
+              end,
             annealing_iteration:
               case opts.max_reannealing_iterations do
                 0 -> state.annealing_iteration + 1
