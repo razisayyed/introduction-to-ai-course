@@ -27,11 +27,11 @@ To start the website:
 * build the docker image using the following command:
   
   ```bash
-  docker build . -t graphcoloring
+  docker compose build
   ```
   
 * run the container using the following command:
 
   ```bash
-  docker run -p 4000:4000 -rm graphcoloring
+  docker compose up
   ```
